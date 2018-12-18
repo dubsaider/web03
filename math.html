@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link href="bootstrap4-glyphicons/css/bootstrap-glyphicons.min.css" rel="stylesheet" type="text/css" />
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<style type="text/css">
+	.drophover:hover > .dropdown-menu{
+		display: block;
+		margin: 0;
+	}
+</style>
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+	MathJax.Hub.Config({ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+</head>
+
+<body>
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-info">
+			<a class="navbar-brand" href="#">Сайт</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="index.html">Главная <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item dropdown drophover">
+						<a class="nav-link dropdown-toggle" href="works.html" role="button" aria-haspopup="true" aria-expanded="false">Задания</a>
+						<div class="dropdown-menu">
+							<div class="btn-group dropright drophover">
+								<a class="dropdown-toggle dropdown-item" style="cursor: pointer;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Задание 3
+								</a>
+								<div class="dropdown-menu">
+									<a class="dropdown-item" href="cat.html">SVG</a>
+									<a class="dropdown-item" href="math.html">Формулы</a>
+									<a class="dropdown-toggle dropdown-item" style="cursor: pointer;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										Задание 4
+									</a>
+									<div class="dropdown-menu">
+										<a class="dropdown-item" href="cat.html">Тут</a>
+										<a class="dropdown-item" href="math.html">Пусто</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="nav-item active">
+							<a class="nav-link" href="cat.html">Кот</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link disabled" href="#" data-toggle="modal" data-target="#myModal">Спроси разрешения у родителей</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+					<li class="breadcrumb-item"><a href="works.html">Задания</a></li>
+					<li class="breadcrumb-item active" aria-current="page">Формулы</li>
+				</ol>
+			</nav>
+			<div class="modal fade" id="myModal">
+				<div class="modal-dialog" role="document">
+					<div class="card border-danger">
+						<div class="card-header bg-danger text-white">
+							Ошибка
+						</div>
+						<div class="card-body">
+							<p>Ты не спросил. Ай-ай-ай...</p>
+							<hr>
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<section>
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-4 col-xl-3">
+						<div id="accordion">
+
+							<div class="card">
+								<div class="card-header" id="headingOne">
+									<h5 class="mb-0">
+										<button class="btn btn-link" data-toggle="collapse" data-target="#SiteMap" aria-expanded="true" aria-controls="SiteMap">
+											Ненужная вещь
+										</button>
+									</h5>
+								</div>
+								<div id="SiteMap" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+									<div class="card-body">
+										<a href="index.html">Главная</a>
+										<ul>
+											<li>
+												<a href="works.html">Задания</a>
+												<ul>
+													<li> <a href="cat.html">Кот</a></li>
+													<li><a href="math.html">Формулы</a></li>
+												</ul>
+											</li>
+											<li><a href="#" data-toggle="modal" data-target="#myModal">Контент</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="col-md-8 col-xl-9">
+						<table class="table table-striped">
+							<thead>
+								<tr>
+									<th scope="col">#</th>
+									<th scope="col">Имя</th>
+									<th scope="col" style="text-align: center;">Формула</th>
+									<th scope="col">Код</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">1</th>
+									<td>Интегралы</td>
+									<td>$$\int_{a}^{b} x^2 dx$$</td>
+									<td>$\int_{a}^{b} x^2 dx$</td>
+								</tr>
+								<tr>
+									<th scope="row">2</th>
+									<td>Суммы</td>
+									<td>$$\sum_{n=1}^{\infty} 2^{-n} = 1$$</td>
+									<td>$\sum_{n=1}^{\infty} 2^{-n} = 1$</td>
+								</tr>
+								<tr>
+									<th scope="row">3</th>
+									<td>Дроби</td>
+									<td>$${1+R\over 1-v^2}$$</td>
+									<td>${1+R\over 1-v^2}$</td>
+								</tr>
+								<tr>
+									<th scope="row">4</th>
+									<td>Корень</td>
+									<td>$$\sqrt{100}=10$$</td>
+									<td>$\sqrt{100}=10$</td>
+								</tr>
+								<tr>
+									<th scope="row">5</th>
+									<td>Предел</td>
+									<td>$$\lim_{x\to\infty} f(x)$$</td>
+									<td>$\lim_{x\to\infty} f(x)$</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

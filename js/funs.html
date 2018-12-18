@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<metaiewport" content="width=device-width, initial-scale=1">
+	<metaiewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<title></title>
+
+	<style type="text/css">
+		.content > .card{
+			margin:15px;
+			
+
+		}
+		.content > .card input{
+			width: 100%;
+		}	
+	
+
+	</style>
+	
+</head>
+<body>
+
+<header class="mb">
+	
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="#">Задание js</a>
+	</nav>
+	<nav aria-label="breadcrumb">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item"><a href="../index.html">Главная</a></li>
+			<li class="breadcrumb-item"><a href="index.html">Задания</a></li>
+			<li class="breadcrumb-item active" aria-current="page">Функции</li>
+		</ol>
+	</nav>
+</header>
+
+
+
+<section>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-4 col-xl-3">
+					<div class="card card-body">
+						<a href="Главная"></a>
+						<ul>
+							<li><a href="Area.html">Площади фигур</a></li>
+							<li><a href="cycles.html">Циклы</a></li>
+							<li><a href="arrays.html">Массивы</a></li>
+							<li><a href="funs.html">Функции</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<style type="text/css">
+					.content input{
+						width: 100%;
+					}
+					.content td{
+						-webkit-user-modify: read-write-plaintext-only;
+						min-width: 36px;
+					}
+				</style>
+				<div class="col-md-8 col-xl-9 content">
+					<a href="#" onclick="getMatrix(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16)">getMatrix(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16)</a>
+					<hr>
+
+					<table class="table-bordered table-striped" id="matrixTable">
+						<tr><td></td><td></td></tr>
+						<tr><td></td><td></td></tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script type="text/javascript">
+		
+		var getRandomInt = (min,max) => (Math.random() * (max - min) + min)>>0
+
+
+		function getArray(n){
+			array = []
+			for (let i = 0; i < n; i++)
+				array.push(getRandomInt(0,10))
+			return array
+		}
+
+		var getResultArray = (a) => a.sort((a, b) => a - b)
+
+		matrixTable = document.getElementById('matrixTable')
+		function getMatrix(){
+			var len = arguments.length
+			var p = Math.sqrt(len)>>0
+			if (p*p !== len) {
+				console.error('Matrix isn\'t correct')
+				return
+			}
+
+			var matrix = []
+			for (let i = 0; i < len; i++) {
+				matrix[((i/p>>0)%2 === 0 ? i : len-i-1)%p*p + i/p>>0] = arguments[i]
+			}
+
+			// Вывод в таблицу
+			clearTable(matrixTable, p, p)
+			for (var i = 0; i < len; i++) {
+				matrixTable.rows[i/p>>0].cells[i%p].innerHTML = matrix[i]
+			}
+		}
+		
+
+		function clearTable(table,rows,cells) {
+			while (table.rows.length > 0) {
+				table.deleteRow(0)
+			}
+			for (let i = 0; i < rows; i++) {
+				table.insertRow(0)
+				for (let i = 0; i < cells; i++) {
+					table.rows[0].insertCell(0)
+				}
+			}
+		}
+
+
+	</script>
+</body>
+</html>
